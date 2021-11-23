@@ -22,7 +22,7 @@ jobs:
       - name: Publish
         run: |
             cp BorderlessMinecraftSite/wwwroot/index.html BorderlessMinecraftSite/wwwroot/404.html
-            dotnet publish BorderlessMinecraftSite/Pages2.csproj -c Release -o Prerender/output --nologo
+            dotnet publish BorderlessMinecraftSite/BorderlessMinecraftSite.csproj -c Release -o Prerender/output --nologo
             
      # Use NodeJS react-snap utility to prerender static website
       - name: Prerender Blazor Client
