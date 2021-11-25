@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider/>
+<MudThemeProvider Theme="theme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -25,14 +25,18 @@
 </MudLayout>
 
 @code {
-    bool _drawerOpen = true;
+    bool _drawerOpen;
 
     void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;
     }
 
-    MudTheme theme = new MudTheme()
+    string[] FontFamily = new[] { "Montserrat", "sans-serif" };
+
+    MudTheme theme = new MudTheme();
+
+    MudTheme darkTheme = new MudTheme()
         {
             Palette = new Palette()
             {
@@ -58,4 +62,23 @@
                 TextDisabled = "rgba(255,255,255, 0.2)"
             }
         };
+
+        
+    protected override void OnInitialized()
+    {
+        theme.Typography.Default.FontFamily = FontFamily;
+        theme.Typography.H1.FontFamily = FontFamily;
+        theme.Typography.H2.FontFamily = FontFamily;
+        theme.Typography.H3.FontFamily = FontFamily;
+        theme.Typography.H4.FontFamily = FontFamily;
+        theme.Typography.H5.FontFamily = FontFamily;
+        theme.Typography.H6.FontFamily = FontFamily;
+        theme.Typography.Subtitle1.FontFamily = FontFamily;
+        theme.Typography.Subtitle2.FontFamily = FontFamily;
+        theme.Typography.Body1.FontFamily = FontFamily;
+        theme.Typography.Body2.FontFamily = FontFamily;
+        theme.Typography.Button.FontFamily = FontFamily;
+        theme.Typography.Caption.FontFamily = FontFamily;
+        theme.Typography.Overline.FontFamily = FontFamily;
+    }
 }
