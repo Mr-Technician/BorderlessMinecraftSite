@@ -7,9 +7,29 @@
 <MudLayout>
     <MudAppBar Elevation="4">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <img src="favicon.ico" />
+        <MudLink Class="ml-3" Href="" Color="Color.Surface">
+            Borderless Minecraft
+        </MudLink>
         <MudSpacer />
-        <MudIconButton Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Inherit" Link="https://mudblazor.com/" Target="_blank" />
-        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/Garderoben/MudBlazor" Target="_blank" />
+        @*<MudIconButton Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Inherit" Link="https://mudblazor.com/" Target="_blank" />
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/Garderoben/MudBlazor" Target="_blank" />*@
+        <MudLink Color="Color.Surface" Class="mx-4" Href="latest">
+            Download
+        </MudLink>
+        <MudLink Color="Color.Surface" Class="mx-4" Href="">
+            Docs
+        </MudLink>
+        <MudLink Color="Color.Surface" Class="mx-4" Href="faq">
+            FAQ
+        </MudLink>
+        <MudLink Color="Color.Surface" Class="mx-4" Href="">
+            Github
+        </MudLink>
+        <MudLink Color="Color.Surface" Class="mx-4" Href="">
+            Report an Issue
+        </MudLink>
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/Mr-Technician/BorderlessMinecraft" Target="_blank" />
     </MudAppBar>
     <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
         <MudDrawerHeader>
@@ -34,9 +54,9 @@
 
     string[] FontFamily = new[] { "Montserrat", "sans-serif" };
 
-    MudTheme theme = new MudTheme();
+    //MudTheme theme = new MudTheme();
 
-    MudTheme darkTheme = new MudTheme()
+    MudTheme theme = new MudTheme()
         {
             Palette = new Palette()
             {
