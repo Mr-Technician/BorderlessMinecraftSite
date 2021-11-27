@@ -4,45 +4,58 @@
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<MudLayout>
-    <MudAppBar Elevation="4">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <img src="favicon.ico" />
-        <MudLink Class="ml-3" Href="" Color="Color.Surface">
-            Borderless Minecraft
-        </MudLink>
-        <MudSpacer />
-        @*<MudIconButton Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Inherit" Link="https://mudblazor.com/" Target="_blank" />
-        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/Garderoben/MudBlazor" Target="_blank" />*@
-        <MudLink Color="Color.Surface" Class="mx-4" Href="latest">
-            Download
-        </MudLink>
-        <MudLink Color="Color.Surface" Class="mx-4" Href="">
-            Docs
-        </MudLink>
-        <MudLink Color="Color.Surface" Class="mx-4" Href="faq">
-            FAQ
-        </MudLink>
-        <MudLink Color="Color.Surface" Class="mx-4" Href="">
-            Github
-        </MudLink>
-        <MudLink Color="Color.Surface" Class="mx-4" Href="">
-            Report an Issue
-        </MudLink>
-        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/Mr-Technician/BorderlessMinecraft" Target="_blank" />
-    </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
-        <MudDrawerHeader>
-            <MudText Typo="Typo.h6">BorderlessMinecraftSite</MudText>
-        </MudDrawerHeader>
-        <NavMenu />
-    </MudDrawer>
-    <MudMainContent>
-        <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
+<div>
+    <MudLayout>
+        <MudAppBar Elevation="4">
+            @*<MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />*@
+
+            <MudLink Style="margin-bottom:-6px;" Href="">
+                <img src="favicon.ico" title="Borderless Minecraft" />
+            </MudLink>
+            <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert>
+                <MudLink Class="ml-3 appbar-text" Href="">
+                    <MudText Typo="Typo.h6">Borderless Minecraft</MudText>
+                </MudLink>
+            </MudHidden>
+            <MudSpacer />
+            @*<MudIconButton Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Inherit" Link="https://mudblazor.com/" Target="_blank" />
+                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/Garderoben/MudBlazor" Target="_blank" />*@
+            <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert>
+                <MudLink Class="mx-4 appbar-text" Href="latest">
+                    Download
+                </MudLink>
+                <MudLink Class="mx-4 appbar-text" Href="">
+                    Docs
+                </MudLink>
+                <MudLink Class="mx-4 appbar-text" Href="faq">
+                    FAQ
+                </MudLink>
+                <MudLink Class="mx-4 appbar-text" Href="">
+                    Report an Issue
+                </MudLink>
+                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/Mr-Technician/BorderlessMinecraft" Target="_blank" />
+            </MudHidden>
+            <MudHidden Breakpoint="Breakpoint.SmAndUp">
+                <MudMenu Icon="@Icons.Filled.Menu" Color="Color.Inherit" Dense OffsetX Style="right:0;">
+                    <MudMenuItem Link="">Download</MudMenuItem>
+                    <MudMenuItem Link="">Docs</MudMenuItem>
+                    <MudMenuItem Link="">FAQ</MudMenuItem>
+                    <MudMenuItem Link="">Report an Issue</MudMenuItem>
+                    <MudMenuItem Link="https://github.com/Mr-Technician/BorderlessMinecraft">Github</MudMenuItem>
+                </MudMenu>
+            </MudHidden>
+        </MudAppBar>
+        <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
+            <MudDrawerHeader>
+                <MudText Typo="Typo.h6">BorderlessMinecraftSite</MudText>
+            </MudDrawerHeader>
+            <NavMenu />
+        </MudDrawer>
+        <MudMainContent>
             @Body
-        </MudContainer>
-    </MudMainContent>
-</MudLayout>
+        </MudMainContent>
+    </MudLayout>
+</div>
 
 @code {
     bool _drawerOpen;
@@ -54,9 +67,9 @@
 
     string[] FontFamily = new[] { "Montserrat", "sans-serif" };
 
-    //MudTheme theme = new MudTheme();
+    MudTheme theme = new MudTheme();
 
-    MudTheme theme = new MudTheme()
+    MudTheme darkTheme = new MudTheme()
         {
             Palette = new Palette()
             {
@@ -83,7 +96,7 @@
             }
         };
 
-        
+
     protected override void OnInitialized()
     {
         theme.Typography.Default.FontFamily = FontFamily;
@@ -100,5 +113,8 @@
         theme.Typography.Button.FontFamily = FontFamily;
         theme.Typography.Caption.FontFamily = FontFamily;
         theme.Typography.Overline.FontFamily = FontFamily;
+        theme.Palette.AppbarBackground = "#27272f";
+        theme.Palette.AppbarText = "rgba(255,255,255, 0.70)";
+        //theme.Palette.Background = Colors.Grey.Lighten1;
     }
 }

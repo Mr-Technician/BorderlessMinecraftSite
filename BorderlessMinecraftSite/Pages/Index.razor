@@ -2,21 +2,76 @@
 
 @*<img src="background.png" style="position:absolute;left:0;top:0;width:100vw;" />*@
 
-<div style="background-image: url('background.png'); background-size: cover; background-position: center center; position: absolute; height: 100vh; width: 100%; top: 0px; left: 0px; z-index: -100; transform: translate3d(0px, -1px, 0px);">
+@*<div style="background-image: url('background.png'); background-size: cover; background-position: center center; position: absolute; height: 50vh; width: 100%; top: 0px; left: 0px; z-index: -100; transform: translate3d(0px, 0px, 0px);">
 
-</div>
-    <MudText Typo="Typo.h2" Align="Align.Center" GutterBottom>Borderless Minecraft</MudText>
-    @*<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor!</MudText>
-    <MudAlert Severity="Severity.Normal" Variant="Variant.Filled">You can find documentation and examples on our website here: <MudLink Href="https://mudblazor.com" Typo="Typo.body2" Color="Color.Inherit"><b>www.mudblazor.com</b></MudLink></MudAlert>*@
+    </div>*@
 
-    <TypingComponent TypingStrings="@typingText" />
+<MudContainer MaxWidth="MaxWidth.Large" Class="my-16">
+    <div class="mb-16">
+        <MudText Typo="Typo.h3" Align="Align.Center">Borderless Minecraft</MudText>
+        <MudText Typo="Typo.h4" Align="Align.Center" GutterBottom>Run Minecraft as a Borderless Window</MudText>
+        @*<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor!</MudText>
+            <MudAlert Severity="Severity.Normal" Variant="Variant.Filled">You can find documentation and examples on our website here: <MudLink Href="https://mudblazor.com" Typo="Typo.body2" Color="Color.Inherit"><b>www.mudblazor.com</b></MudLink></MudAlert>*@
+
+        <TypingComponent TypingStrings="@typingText" />
+    </div>
+</MudContainer>
+
+<MudContainer Class="px-0" Style="max-width:100vw">
+    <MudPaper Outlined Class="rounded-0" Style=@($"background:#bdbdbd52")>
+        <MudContainer MaxWidth="MaxWidth.Large">
+            <MudGrid Class="mb-4 mt-2">
+                <MudItem xs="12">
+                    <MudText Typo="Typo.h4" Align="Align.Center" GutterBottom>Features</MudText>
+                </MudItem>
+                <MudItem xs="12" md="4">
+                    <MudText Typo="Typo.h5" Align="Align.Center">
+                        <MudAvatar Color="Color.Info" Variant="Variant.Outlined" Class="mb-4">
+                            <MudIcon Icon="@Icons.Filled.AttachMoney" />
+                        </MudAvatar>
+                        <br />
+                        Free
+                    </MudText>
+                </MudItem>
+                <MudItem xs="12" md="4">
+                    <MudText Typo="Typo.h5" Align="Align.Center">
+                        <MudAvatar Color="Color.Info" Variant="Variant.Outlined" Class="mb-4">
+                            <MudIcon Icon="@Icons.Filled.AttachMoney" />
+                        </MudAvatar>
+                        <br />
+                        Lightweight
+                    </MudText>
+                </MudItem>
+                <MudItem xs="12" md="4">
+                    <MudText Typo="Typo.h5" Align="Align.Center">
+                        <MudAvatar Color="Color.Info" Variant="Variant.Outlined" Class="mb-4">
+                            <MudIcon Icon="@Icons.Filled.AttachMoney" />
+                        </MudAvatar>
+                        <br />
+                        Runs in the background
+                    </MudText>
+                </MudItem>
+            </MudGrid>
+        </MudContainer>
+    </MudPaper>
+</MudContainer>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudText Align="Align.Center" Class="mt-8">
+        <MudButton>
+            <MudButton Variant="Variant.Filled" Size="Size.Large" Color="Color.Info" Link="latest" StartIcon="@Icons.Filled.FileDownload">Download</MudButton>
+        </MudButton>
+    </MudText>
+</MudContainer>
+
 
 
 
 @code {
     string[] typingText = {
-        "test",
-        "this is some text",
-        "borderless minecraft"
+        "Free and open source",
+        "Made for streamers",
+        "Lightweight and seamless",
+        "Works with all clients"
     };
 }

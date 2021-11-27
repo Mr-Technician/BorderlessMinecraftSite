@@ -2,28 +2,30 @@
 
 <PageTitle>Frequently Asked Questions</PageTitle>
 
-<MudText Typo="Typo.h3" GutterBottom>Frequently Asked Questions</MudText>
+<MudContainer MaxWidth="MaxWidth.Large" Class="my-16">
+    <MudText Typo="Typo.h3" GutterBottom>Frequently Asked Questions</MudText>
 
-<MudExpansionPanels DisableBorders="true" Elevation="0">
-    <MudExpansionPanel Text="What is Borderless Minecraft?">
-        
-    </MudExpansionPanel>
-    <MudExpansionPanel Text="Is Borderless Minecraft Free?">
-        Yes! Borderless Minecraft is free and open source. This means the code can be downloaded and even modified by anyone.
-    </MudExpansionPanel>
-    <MudExpansionPanel Text="Why are admin rights required for auto borderless?">
-        Detecting when a process starts requires higher privilages than running an app.
-    </MudExpansionPanel>
-    <MudExpansionPanel Text="Why does windows say the publisher is unknown?">
-        Verifying code is an expensive process that I cannot justify at this time. However, the code is open source and can be viewed by anyone for safety.
-    </MudExpansionPanel>
-    <MudExpansionPanel Text="I'm having an issue! Where can I report it?">
-        Create an issue on <MudLink Href="https://github.com/Mr-Technician/BorderlessMinecraft/issues" Target="_blank">Github</MudLink> and I will take a look.
-    </MudExpansionPanel>
-    <MudExpansionPanel Text="Can I contribute to Borderless Minecraft?">
-        Yes! Open the repository on <MudLink Href="https://github.com/Mr-Technician/BorderlessMinecraft" Target="_blank">Github</MudLink>, fork the code, make changes, and open a pull request.
-    </MudExpansionPanel>
-</MudExpansionPanels>
+    <MudExpansionPanels>
+        <MudExpansionPanel Text="What is Borderless Minecraft?">
+
+        </MudExpansionPanel>
+        <MudExpansionPanel Text="Is Borderless Minecraft Free?">
+            Yes! Borderless Minecraft is free and open source. This means the code can be downloaded and even modified by anyone.
+        </MudExpansionPanel>
+        <MudExpansionPanel Text="Why are admin rights required for auto borderless?">
+            Detecting when a process starts requires higher privilages than running an app.
+        </MudExpansionPanel>
+        <MudExpansionPanel Text="Why does windows say the publisher is unknown?">
+            Verifying code is an expensive process that I cannot justify at this time. However, the code is open source and can be viewed by anyone for safety.
+        </MudExpansionPanel>
+        <MudExpansionPanel Text="I'm having an issue! Where can I report it?">
+            Create an issue on <MudLink Href="https://github.com/Mr-Technician/BorderlessMinecraft/issues" Target="_blank">Github</MudLink> and I will take a look.
+        </MudExpansionPanel>
+        <MudExpansionPanel Text="Can I contribute to Borderless Minecraft?">
+            Yes! Open the repository on <MudLink Href="https://github.com/Mr-Technician/BorderlessMinecraft" Target="_blank">Github</MudLink>, fork the code, make changes, and open a pull request.
+        </MudExpansionPanel>
+    </MudExpansionPanels>
+</MudContainer>
 
 @code {
 

@@ -1,0 +1,3 @@
+﻿::deep .appbar-text {
+    color: var(--mud-palette-appbar-text)!important;
+}
