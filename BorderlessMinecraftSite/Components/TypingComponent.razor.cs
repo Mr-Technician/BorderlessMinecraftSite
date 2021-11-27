@@ -21,7 +21,6 @@ namespace BorderlessMinecraftSite.Components
 
         private async Task TypeLine()
         {
-            Console.WriteLine(nameof(TypeLine));
             typing_line++;
             if (typing_line > TypingStrings.Length - 1)
             {
@@ -35,7 +34,6 @@ namespace BorderlessMinecraftSite.Components
 
         private async Task ClearLine()
         {
-            Console.WriteLine(nameof(ClearLine));
             switch (typing_clear_step)
             {
                 case 0:
@@ -64,7 +62,6 @@ namespace BorderlessMinecraftSite.Components
 
         private async Task TypeChar()
         {
-            Console.WriteLine(nameof(TypeChar));
             if (typing_char < TypingStrings[typing_line].Length)
             {
                 TypingText += TypingStrings[typing_line][typing_char];
